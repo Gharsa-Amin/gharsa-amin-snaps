@@ -1,0 +1,17 @@
+@use "../../styles/partials/variables";
+@use "../../styles/partials/global";
+@use "../../styles/partials/typograph";
+@use "../../styles/partials/mixing";
+
+.snaps-logo {
+	display: flex;
+	color: $primary-colorBlack;
+	font-size: 32px;
+	line-height: 32px;
+	font-weight: 400;
+
+	@include tablet {
+		font-size: 40px;
+		line-height: 40px;
+	}
+}

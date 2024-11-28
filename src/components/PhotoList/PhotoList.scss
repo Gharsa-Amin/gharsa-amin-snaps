@@ -3,10 +3,21 @@
 @use "../../styles/partials/variables" as *;
 @use "../../styles/partials/global" as *;
 
+.photo-gallery {
+	display: flex;
+	flex-wrap: wrap; /* Allow items to wrap onto new lines */
+	gap: 16px; /* Space between items */
+	justify-content: center; /* Optionally center the items */
+}
+
 .photo-gallery__image {
 	max-width: 100%;
 	border-radius: 12px;
 	@include tablet {
+		display: flex;
+		flex-direction: row;
+		flex: 1 0 calc(50% - 16px); /* Each item will take up 50% of the width minus the gap */
+		max-width: calc(50% - 16px);
 	}
 }
 

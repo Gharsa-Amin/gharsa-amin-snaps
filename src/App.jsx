@@ -34,7 +34,6 @@ const handleTagClicked = (tag) => {
     const toggleFilterDrawer = () => {
         setIsFilterOpen((prev) => !prev);  // Toggle filter drawer open/close
     };
-
     return (
         <> 
         <SnapsLogo />
@@ -55,6 +54,7 @@ const handleTagClicked = (tag) => {
         )}
         <Header />
         <PhotosGallery selectedTag={selectedTag} /> {/* Pass selectedTag to filter photos */}
+        <SnapsLogo />
         <Footer />
         <CopyRights />
         </>

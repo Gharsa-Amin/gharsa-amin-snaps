@@ -1,9 +1,11 @@
 
 import './Card.scss'; 
 
+
 const DynamicEventHandler = ({ tags, handleTagClicked, selectedTag }) => {
     return (
     <div className="filter-drawer__content">
+        <h2 className='filter-drawer__header'>Filters</h2>
         {tags.map((tag) => (
         <button
             onClick={() => handleTagClicked(tag)}

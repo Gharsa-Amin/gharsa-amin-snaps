@@ -1,3 +1,25 @@
+@use "../../styles/partials/mixing" as *;
+@use "../../styles/partials/typograph" as *;
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/global" as *;
 
+.filter-drawer__content {
+	padding-left: 10px;
+	background-color: #e4efec;
 
+	& button {
+		margin: 3px;
+		border: 2px solid #49675a;
+		color: #49675a;
+		font-weight: 700;
+		background-color: #ffffff;
+	}
+	& .selected {
+		background-color: #1e6655;
+		color: #ffffff;
+		border-color: #49675a; // border colors are still yellow. why
+	}
 
+	@include desktop {
+	}
+}

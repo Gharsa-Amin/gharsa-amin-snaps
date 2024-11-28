@@ -1,0 +1,61 @@
+@use "./styles/partials/mixing" as *;
+@use "./styles/partials/typograph" as *;
+@use "./styles/partials/variables" as *;
+@use "./styles/partials/global" as *;
+
+body {
+	background-color: #effaf7;
+	box-sizing: border-box;
+	width: 100%;
+	// font-family: "Newsreader"; This turns everything italic in the drawer.
+}
+
+.filter-cta {
+	padding-top: 8px;
+	padding-bottom: 8px;
+	padding-right: 20px;
+	padding-left: 20px;
+	position: relative;
+	float: right;
+	display: flex;
+	flex-direction: row-reverse;
+
+	@include tablet {
+		padding-top: 11px;
+		padding-bottom: 11px;
+		padding-right: 22px;
+		padding-left: 22px;
+	}
+}
+
+button {
+	border-color: #49675a;
+	background-color: #ffffff;
+}
+
+button :hover {
+	border-color: #49675a;
+	background-color: #49675a;
+}
+
+.filter-drawer {
+	padding-top: 20px;
+}
+
+.filter-drawer__content {
+	padding-left: 10px;
+	background-color: #e4efec;
+
+	& button {
+		margin: 3px;
+		border: 2px solid #49675a;
+		color: #49675a;
+		font-weight: 700;
+		background-color: #ffffff;
+	}
+	& .selected {
+		background-color: #1e6655;
+		color: #ffffff;
+		border-color: #49675a; // border colors are still yellow. why
+	}
+}

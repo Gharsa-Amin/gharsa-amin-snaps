@@ -1,0 +1,36 @@
+@use "../../styles/partials/mixing" as *;
+@use "../../styles/partials/typograph" as *;
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/global" as *;
+
+.photo-gallery__image {
+	max-width: 100%;
+	border-radius: 12px;
+	@include tablet {
+	}
+}
+
+.photo-gallery__details {
+	border: 1px solid #b7cec9;
+	border-radius: 12px;
+}
+.photo-gallery__item {
+	padding: 20px;
+	// margin-right: 10px;
+	border-radius: 12px;
+	&tag {
+		border: 2px solid #1e6655;
+		background-color: #b7cec9;
+		margin-top: 0;
+	}
+}
+
+button.tag {
+	margin: 5px;
+}
+
+.photographer {
+	margin: 0;
+	display: flex;
+	justify-content: flex-end;
+}

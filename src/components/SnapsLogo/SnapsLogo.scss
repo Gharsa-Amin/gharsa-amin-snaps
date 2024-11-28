@@ -5,13 +5,10 @@
 
 .snaps-logo {
 	display: flex;
-	color: $primary-colorBlack;
+	color: #0c1e1a;
 	font-size: 32px;
 	line-height: 32px;
 	font-weight: 400;
-
-	@include tablet {
-		font-size: 40px;
-		line-height: 40px;
-	}
+	margin: 0%;
+	padding-top: 20px;
 }

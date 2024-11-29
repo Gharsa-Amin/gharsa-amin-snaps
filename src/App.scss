@@ -41,3 +41,10 @@ button :hover {
 .filter-drawer {
 	padding-top: 20px;
 }
+
+.Nav-bar {
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-end;
+	color: aqua;
+}

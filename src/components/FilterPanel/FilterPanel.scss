@@ -1,0 +1,52 @@
+@use "../../styles/partials/mixing" as *;
+@use "../../styles/partials/typograph" as *;
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/global" as *;
+
+.filter-drawer__content {
+	padding-left: 10px;
+	background-color: #e4efec;
+
+	& button {
+		margin: 3px;
+		border: 2px solid #49675a;
+		color: #49675a;
+		font-weight: 700;
+		background-color: #ffffff;
+	}
+	& .selected {
+		background-color: #1e6655;
+		color: #ffffff;
+		// border-color: #49675a; // border colors are still yellow. why
+	}
+
+	@include desktop {
+	}
+}
+
+.filter-drawer {
+	@include desktop {
+		position: absolute;
+		right: 0;
+		width: 300px;
+		height: 100%;
+		background-color: #e4efec;
+		box-shadow: -4px 0 6px rgba(0, 0, 0, 0.1);
+		transition: transform 0.3s ease-in-out;
+	}
+	&.open {
+		@include desktop {
+		}
+	}
+
+	.filter-drawer__content {
+		@include desktop {
+			display: flex;
+			flex-wrap: wrap; // Allow buttons to wrap to the next row
+			justify-content: flex-start; // Align items to the start (left) of the container
+			padding: 20px;
+			height: 100%;
+			// overflow-y: auto; // Make it scrollable if there are too many buttons
+		}
+	}
+}

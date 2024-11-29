@@ -1,20 +1,13 @@
-// import { useState } from 'react'
-// import "./App.scss";
-// import SnapsLogo from "./components/ComponentSnapsLogo/ComponentSnapsLogo";
-// import Footer from './components/ComponentFooter/ComponentFooter';
-// import DynamicEventHandler from "./components/ComponentCard/ComponentCard";
-// import tags from './data/tags.json/tags.json';
-// import PhotosGallery from "./components/ComponentPhotoList/ComponentPhotoList";
-
 import React, { useState } from "react";
 import "./App.scss";
 import SnapsLogo from "./components/SnapsLogo/SnapsLogo";
 import Footer from "./components/Footer/Footer";
-import DynamicEventHandler from "./components/Card/Card";
+// import DynamicEventHandler from "./components/FilterPanel/FilterPanel";
 import tags from "./data/tags.json/tags.json";
 import PhotosGallery from "./components/PhotoGallery/PhotoGallery";
 import Header from "./components/Header/Header";
 import image from "./assets/images/Filter.svg";
+import FilterPanel from "./components/FilterPanel/FilterPanel";
 
 export default function App() {
 	const [isFilterOpen, setIsFilterOpen] = useState(false); // Whether the filter drawer is open
@@ -32,9 +25,10 @@ export default function App() {
 	const toggleFilterDrawer = () => {
 		setIsFilterOpen((prev) => !prev); // Toggle filter drawer open/close
 	};
+	//change Nav-bar to header.
 	return (
 		<>
-			<div>
+			<div className="Nav-bar">
 				<SnapsLogo />
 				<button onClick={toggleFilterDrawer} className="filter-cta">
 					<img
@@ -44,18 +38,17 @@ export default function App() {
 					/>
 					{isFilterOpen ? "Filters" : "Filters"}
 				</button>
-
-				{/* Filter drawer */}
-				{isFilterOpen && (
-					<div className="filter-drawer">
-						<DynamicEventHandler
-							tags={tags}
-							handleTagClicked={handleTagClicked}
-							selectedTag={selectedTag} // Pass selectedTag to highlight the active tag
-						/>
-					</div>
-				)}
 			</div>
+			{/* Filter drawer */}
+			{isFilterOpen && (
+				<div className="filter-drawer">
+					<FilterPanel
+						tags={tags}
+						handleTagClicked={handleTagClicked}
+						selectedTag={selectedTag} // Pass selectedTag to highlight the active tag
+					/>
+				</div>
+			)}
 			<Header />
 			<PhotosGallery selectedTag={selectedTag} />{" "}
 			{/* Pass selectedTag to filter photos */}
@@ -63,19 +56,3 @@ export default function App() {
 		</>
 	);
 }
-
-// export default function App() {
-
-//     const handleTagClicked = (tag) => {
-
-//     }
-//     return (
-//         <>
-//         <DynamicEventHandler handleTagClicked={handleTagClicked} tags={tags}/>;
-//         <SnapsLogo />
-//         <PhotosGallery />
-//         <Footer />
-
-//         </>
-//     )
-// }

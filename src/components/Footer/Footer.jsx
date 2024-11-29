@@ -7,7 +7,12 @@ import './Footer.scss';
 
 export default function Footer(){
     return <section className = "footer-section"> 
-    <h3 className = "footer-section__header">{SnapsLogo}</h3> 
+     <div className='footer-header__desktop'><SnapsLogo/></div>
+    <div className='footer-container'>
+    <div className='footer-wrapper'>
+    <h3 className = "footer-section__header">
+        <SnapsLogo />
+        </h3> 
     <article className="footer-section__mission">
         <p className="footer-section__mission-item">For photographers</p>
         <p className="footer-section__mission-item">Hire talent</p>
@@ -19,16 +24,23 @@ export default function Footer(){
         <p className="footer-section__about-item">Careers</p>
         <p className="footer-section__about-item">Support</p>
     </article>
+    </div>
     <FooterFacebook /> 
-
+    </div>
+    <section className="copy-rights">
+        <p className="copy-rights__paragraph">© 2024 Snaps</p>
+        <p className="copy-rights__paragraph">Terms</p>
+        <p className="copy-rights__paragraph">Privacy</p>
+        <p className="copy-rights__paragraph">Cookies</p>
+    </section>
     </section>
 }
 
 function FooterFacebook(){
 return <article className="footer-section__socials">
-<img src={Facebook} alt="facebook logo" />
-<img src={Twitter} alt='Twitter logo' /> 
-<img src={Instagram} alt='Instagram logo' /> 
-<img src={Pinterest} alt='Pinterest logo'/>
+<img className='footer-section__socials-icons' src={Facebook} alt="facebook logo" />
+<img className='footer-section__socials-icons'src={Twitter} alt='Twitter logo' /> 
+<img className='footer-section__socials-icons'src={Instagram} alt='Instagram logo' /> 
+<img className='footer-section__socials-icons'src={Pinterest} alt='Pinterest logo'/>
 </article> 
 }

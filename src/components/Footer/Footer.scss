@@ -1,0 +1,125 @@
+@use "../../styles/partials/global" as *;
+@use "../../styles/partials/mixing" as *;
+@use "../../styles/partials/typograph" as *;
+@use "../../styles/partials/variables" as *;
+
+.footer-section {
+	padding: 1.25rem;
+	padding-left: 1.875rem;
+	color: $primary-colorBlack;
+
+	&__header {
+		font-family: "Newsreader";
+		margin-bottom: 1.875rem;
+		margin-top: 1.875rem;
+
+		@include desktop {
+			display: none;
+		}
+	}
+
+	&__mission {
+		font-family: "Outfit";
+		font-weight: 500;
+		margin-top: 1.25rem;
+		&-item {
+			margin: 0;
+			padding-bottom: 0.5rem;
+			font-size: 1.375rem;
+			@include tablet {
+				font-size: 2rem;
+			}
+			@include desktop {
+				padding-right: 3.125rem;
+				font-size: 1.5625rem;
+			}
+		}
+	}
+	&__socials {
+		@include desktop {
+			display: flex;
+			margin-top: -20rem;
+		}
+		&-icons {
+			padding-right: 1.875rem;
+			@include tablet {
+				width: 2.8125rem;
+			}
+			@include desktop {
+				margin-top: 5.625rem;
+				width: 1.875rem;
+				padding-right: 1rem;
+			}
+		}
+	}
+	&__about {
+		font-family: "Outfit";
+		font-weight: 500;
+		margin-top: 1.25rem;
+		margin-bottom: 1.25rem;
+		&-item {
+			margin: 0;
+			padding-bottom: 0.5rem;
+			font-size: 1.375rem;
+			@include tablet {
+				font-size: 2rem;
+			}
+			@include desktop {
+				font-size: 1.5625rem;
+				padding-right: 1.875rem;
+			}
+		}
+	}
+}
+
+.copy-rights {
+	color: rgb(202, 196, 196);
+	font-family: "Outfit";
+	padding-top: 1.25rem;
+	@include flex-start;
+	gap: 0.8rem;
+
+	&__paragraph {
+		margin: 0;
+		font-size: 1.125rem;
+		@include tablet {
+			font-size: 1.8rem;
+			padding-bottom: 3.125rem;
+		}
+		@include desktop {
+			padding-top: 0;
+			font-size: 1.25rem;
+		}
+	}
+}
+.footer-wrapper {
+	@include tablet {
+		display: flex;
+		justify-content: space-between;
+		gap: 1.875rem;
+		margin-top: 6rem;
+		margin-bottom: 15rem;
+	}
+}
+.footer-container {
+	@include desktop {
+		display: flex;
+		flex-direction: row;
+		justify-content: right;
+		gap: 3.125rem;
+		padding-left: 1.875rem;
+	}
+}
+
+.footer-header__desktop {
+	display: none;
+	@include tablet {
+		display: none;
+	}
+	@include desktop {
+		@include flex-start;
+		position: absolute;
+		padding-bottom: 3.125rem;
+		padding-top: 6.25rem;
+	}
+}

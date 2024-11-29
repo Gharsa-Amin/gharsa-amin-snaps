@@ -36,6 +36,7 @@ const handleTagClicked = (tag) => {
     };
     return (
         <> 
+        <div>
         <SnapsLogo />
         <button onClick={toggleFilterDrawer} className="filter-cta">
         <img src={image} alt="Filter icon" className="filter-icon filter-icon-active" />
@@ -52,9 +53,9 @@ const handleTagClicked = (tag) => {
             />
             </div>
         )}
+        </div>
         <Header />
         <PhotosGallery selectedTag={selectedTag} /> {/* Pass selectedTag to filter photos */}
-        <SnapsLogo />
         <Footer />
         <CopyRights />
         </>

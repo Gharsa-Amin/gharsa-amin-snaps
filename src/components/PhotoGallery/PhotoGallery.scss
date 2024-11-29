@@ -6,55 +6,56 @@
 .photo-gallery {
 	display: flex;
 	flex-wrap: wrap;
-	gap: 16px;
+	gap: 1rem;
 	justify-content: center;
 
 	@include desktop {
 		gap: 0;
 	}
-}
-
-.photo-gallery__image {
-	max-width: 100%;
-	border-radius: 12px;
-	@include tablet {
-		flex: 0 0 48%;
+	&__image {
+		max-width: 100%;
+		border-radius: 12px;
+		@include tablet {
+			flex: 0 0 48%;
+		}
+		@include desktop {
+			max-width: 0 0 33%;
+			display: block;
+			width: 100%;
+			height: auto;
+		}
 	}
-	@include desktop {
-		max-width: 0 0 33%;
-		display: block;
+	&__details {
+		border-radius: 16px;
+		padding-bottom: 1.5625rem;
+		padding-top: 1.25rem;
+	}
+	&__item {
+		padding: 1.25rem;
+		display: flex;
+		flex-direction: column;
 		width: 100%;
-		height: auto;
-	}
-}
-
-.photo-gallery__details {
-	border-radius: 16px;
-	padding-bottom: 1.5625rem;
-}
-.photo-gallery__item {
-	padding: 20px;
-	display: flex;
-	flex-direction: column;
-	width: 100%;
-	border-radius: 12px;
-	box-sizing: border-box;
-	position: relative;
-	@include tablet {
-		width: 48%;
-	}
-	@include desktop {
-		width: 33.33%;
-	}
-	&tag {
-		border: 2px solid #1e6655;
-		background-color: #b7cec9;
-		margin-top: 0;
+		border-radius: 12px;
+		box-sizing: border-box;
+		position: relative;
+		@include tablet {
+			width: 48%;
+		}
+		@include desktop {
+			width: 33.33%;
+		}
+		&tag {
+			border: 2px solid #1e6655;
+			background-color: #b7cec9;
+			margin-top: 0;
+		}
 	}
 }
 
 button.tag {
-	margin: 3px;
+	margin: 0.1875rem;
+	padding: 0.5rem 0.6rem;
+	font-family: "Outfit";
 }
 
 .photographer {
@@ -63,19 +64,20 @@ button.tag {
 	margin: 0;
 	display: flex;
 	text-align: center;
-	right: 1px;
-	margin-top: -25px;
+	right: 0.0625rem;
+	margin-top: -2.5rem;
 	color: $primary-colorBlack;
 	border: 1px solid#e4efec;
 	background-color: #e4efec;
 	border-radius: 0.5625rem;
+	font-family: "Outfit";
 }
 
 .photo-wrapper {
 	position: relative;
 	width: 100%;
 	background-color: #e4efec;
-	border: 1px solid #b7cec9;
+	border: 0.0625rem solid #b7cec9;
 	border-radius: 0.75rem;
 	padding-bottom: 0.625rem;
 }

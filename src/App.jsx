@@ -12,9 +12,8 @@ import SnapsLogo from './components/SnapsLogo/SnapsLogo';
 import Footer from './components/Footer/Footer'; 
 import DynamicEventHandler from './components/Card/Card';
 import tags from './data/tags.json/tags.json'; 
-import PhotosGallery from './components/PhotoList/PhotoList';
+import PhotosGallery from './components/PhotoGallery/PhotoGallery';
 import Header from './components/Header/Header';
-import CopyRights from './components/CopyRights/CopyRights';
 import image from './assets/images/Filter.svg'; 
 
 export default function App() {
@@ -57,7 +56,6 @@ const handleTagClicked = (tag) => {
         <Header />
         <PhotosGallery selectedTag={selectedTag} /> {/* Pass selectedTag to filter photos */}
         <Footer />
-        <CopyRights />
         </>
     );
     }

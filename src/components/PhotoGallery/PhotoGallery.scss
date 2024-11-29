@@ -1,0 +1,72 @@
+@use "../../styles/partials/mixing" as *;
+@use "../../styles/partials/typograph" as *;
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/global" as *;
+
+.photo-gallery {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 16px;
+	justify-content: center;
+
+	@include desktop {
+		gap: 0;
+	}
+}
+
+.photo-gallery__image {
+	max-width: 100%;
+	border-radius: 12px;
+	@include tablet {
+		flex: 0 0 48%;
+	}
+	@include desktop {
+		max-width: 0 0 33%;
+	}
+}
+
+.photo-gallery__details {
+	border-radius: 16px;
+	padding-bottom: 1.5625rem;
+}
+.photo-gallery__item {
+	padding: 20px;
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	border-radius: 12px;
+	box-sizing: border-box;
+	position: relative;
+	@include tablet {
+		width: 48%;
+	}
+	@include desktop {
+		width: 33%;
+	}
+	&tag {
+		border: 2px solid #1e6655;
+		background-color: #b7cec9;
+		margin-top: 0;
+	}
+}
+
+button.tag {
+	margin: 5px;
+}
+
+.photographer {
+	position: absolute;
+	z-index: 10;
+	margin: 0;
+	display: flex;
+	text-align: center;
+	right: 10px;
+}
+
+.photo-wrapper {
+	position: relative;
+	background-color: #e4efec;
+	border: 1px solid #b7cec9;
+	border-radius: 0.75rem;
+	padding-bottom: 0.625rem;
+}

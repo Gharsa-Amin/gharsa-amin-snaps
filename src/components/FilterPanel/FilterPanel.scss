@@ -13,6 +13,15 @@
 		color: $primary-colorForestGreen;
 		font-weight: 700;
 		background-color: $secondary-colorWhite;
+		font-size: 0.9375rem;
+		border-radius: 15px;
+		@include tablet {
+			font-size: 1.375rem;
+			border-radius: 20px;
+		}
+		@include desktop {
+			font-size: 1.125rem;
+		}
 	}
 	& .selected {
 		background-color: $primary-colorForestGreen;
@@ -61,6 +70,9 @@
 	padding-left: 0.75rem;
 	padding-top: 1.25rem;
 	font-size: 1.875rem;
+	@include tablet {
+		font-size: 2.5rem;
+	}
 	@include desktop {
 		display: none;
 	}

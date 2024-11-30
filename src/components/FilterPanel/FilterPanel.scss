@@ -38,9 +38,7 @@
 
 	.filter-drawer__content {
 		@include desktop {
-			display: flex;
-			flex-wrap: wrap;
-			justify-content: flex-start;
+			@include flex-wrap;
 			padding: 20px;
 			height: 100%;
 			margin-bottom: 18.75rem;

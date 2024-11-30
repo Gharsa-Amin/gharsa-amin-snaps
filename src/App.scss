@@ -18,6 +18,7 @@ body {
 	float: right;
 	display: flex;
 	flex-direction: row-reverse;
+	font-family: "Outfit";
 
 	@include tablet {
 		padding-top: 11px;
@@ -29,17 +30,21 @@ body {
 	}
 }
 
+.filter-cta.active {
+	background-color: #49675a;
+	transform: scale(1.05);
+	color: #ffffff;
+}
+
 button {
 	border-color: #49675a;
 	background-color: #ffffff;
 	font-family: "Outfit";
 }
 
-button :hover {
-	border-color: #49675a;
-	background-color: #49675a;
+img.filter-cta.active {
+	color: #ffffff;
 }
-
 .filter-drawer {
 	padding-top: 20px;
 }
@@ -54,13 +59,17 @@ button :hover {
 	display: flex;
 	justify-content: flex-start;
 	gap: 1rem;
-	transition: all 0.3s ease; /* Smooth transition for width change */
-	width: 100%; /* Default width of 100% */
+	transition: all 0.3s ease;
+	width: 100%;
 }
-
 .is-filter-open {
 	@include desktop {
 		width: 48%;
-		/* Adjust the gallery width when the filter is open */
+	}
+}
+
+.app-container.is-filter-open .photo-gallery__item {
+	@include desktop {
+		flex: 1 1 50%;
 	}
 }

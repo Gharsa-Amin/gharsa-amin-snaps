@@ -19,12 +19,13 @@ export default function App() {
 	const toggleFilterDrawer = () => {
 		setIsFilterOpen((prev) => !prev);
 	};
+	const filterButtonClass = isFilterOpen ? "filter-cta active" : "filter-cta";
 
 	return (
 		<>
 			<div className="Nav-bar">
 				<SnapsLogo />
-				<button onClick={toggleFilterDrawer} className="filter-cta">
+				<button onClick={toggleFilterDrawer} className={filterButtonClass}>
 					<img src={image} alt="Filter icon" />
 					{isFilterOpen ? "Filters" : "Filters"}
 				</button>

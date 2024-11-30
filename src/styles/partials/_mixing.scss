@@ -15,6 +15,12 @@
 	justify-content: flex-start;
 }
 
+@mixin flex-wrap {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: flex-start;
+}
+
 $tablet-breakpoint: 768px;
 $desktop-breakpoint: 1280px;
 $mobile-breakpoint: 320px;

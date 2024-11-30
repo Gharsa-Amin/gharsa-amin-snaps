@@ -7,7 +7,6 @@ body {
 	background-color: #effaf7;
 	box-sizing: border-box;
 	width: 100%;
-	// font-family: "Newsreader"; This turns everything italic in the drawer.
 }
 
 .filter-cta {
@@ -26,11 +25,14 @@ body {
 		padding-right: 22px;
 		padding-left: 22px;
 	}
+	@include desktop {
+	}
 }
 
 button {
 	border-color: #49675a;
 	background-color: #ffffff;
+	font-family: "Outfit";
 }
 
 button :hover {
@@ -46,5 +48,19 @@ button :hover {
 	display: flex;
 	justify-content: space-between;
 	align-items: flex-end;
-	color: aqua;
+}
+
+.photo-gallery-wrapper {
+	display: flex;
+	justify-content: flex-start;
+	gap: 1rem;
+	transition: all 0.3s ease; /* Smooth transition for width change */
+	width: 100%; /* Default width of 100% */
+}
+
+.is-filter-open {
+	@include desktop {
+		width: 48%;
+		/* Adjust the gallery width when the filter is open */
+	}
 }

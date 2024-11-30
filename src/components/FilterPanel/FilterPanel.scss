@@ -17,10 +17,6 @@
 	& .selected {
 		background-color: #1e6655;
 		color: #ffffff;
-		// border-color: #49675a; // border colors are still yellow. why
-	}
-
-	@include desktop {
 	}
 }
 
@@ -28,11 +24,12 @@
 	@include desktop {
 		position: absolute;
 		right: 0;
-		width: 300px;
-		height: 100%;
+		width: 40%;
+		// height: 100%;
 		background-color: #e4efec;
 		box-shadow: -4px 0 6px rgba(0, 0, 0, 0.1);
 		transition: transform 0.3s ease-in-out;
+		margin-bottom: 37.5rem;
 	}
 	&.open {
 		@include desktop {
@@ -42,11 +39,34 @@
 	.filter-drawer__content {
 		@include desktop {
 			display: flex;
-			flex-wrap: wrap; // Allow buttons to wrap to the next row
-			justify-content: flex-start; // Align items to the start (left) of the container
+			flex-wrap: wrap;
+			justify-content: flex-start;
 			padding: 20px;
 			height: 100%;
-			// overflow-y: auto; // Make it scrollable if there are too many buttons
+			margin-bottom: 18.75rem;
 		}
+	}
+}
+
+.filter-drawer__headers {
+	display: none;
+	@include desktop {
+		display: flex;
+		padding-left: 1.25rem;
+		font-family: "Outfit";
+		font-weight: 500;
+		font-size: 2.5rem;
+		padding-bottom: 0.75rem;
+	}
+}
+
+.filter-drawer__header {
+	font-family: "Outfit";
+	font-weight: 500;
+	padding-left: 0.75rem;
+	padding-top: 1.25rem;
+	font-size: 1.875rem;
+	@include desktop {
+		display: none;
 	}
 }

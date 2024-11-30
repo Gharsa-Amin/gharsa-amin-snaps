@@ -4,19 +4,19 @@
 @use "../../styles/partials/global" as *;
 
 .filter-drawer__content {
-	padding-left: 10px;
-	background-color: #e4efec;
+	padding-left: 0.625rem;
+	background-color: $secondary-colorSage;
 
 	& button {
-		margin: 3px;
-		border: 2px solid #49675a;
-		color: #49675a;
+		margin: 0.1875rem;
+		border: 2px solid $primary-colorForestGreen;
+		color: $primary-colorForestGreen;
 		font-weight: 700;
-		background-color: #ffffff;
+		background-color: $secondary-colorWhite;
 	}
 	& .selected {
-		background-color: #1e6655;
-		color: #ffffff;
+		background-color: $primary-colorForestGreen;
+		color: $secondary-colorWhite;
 	}
 }
 
@@ -25,24 +25,21 @@
 		position: absolute;
 		right: 0;
 		width: 40%;
-		// height: 100%;
-		background-color: #e4efec;
+		background-color: $secondary-colorSage;
 		box-shadow: -4px 0 6px rgba(0, 0, 0, 0.1);
 		transition: transform 0.3s ease-in-out;
-		margin-bottom: 37.5rem;
 	}
-	&.open {
-		@include desktop {
-		}
-	}
+}
 
-	.filter-drawer__content {
-		@include desktop {
-			@include flex-wrap;
-			padding: 20px;
-			height: 100%;
-			margin-bottom: 18.75rem;
-		}
+.filter-drawer__content {
+	@include tablet {
+		padding-bottom: 5.625rem;
+		padding-top: 1.25rem;
+	}
+	@include desktop {
+		@include flex-wrap;
+		padding: 1.25rem;
+		height: 100%;
 	}
 }
 

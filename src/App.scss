@@ -45,6 +45,15 @@ button.filter-cta {
 	color: $primary-colorForestGreen;
 	font-family: "Outfit";
 	font-weight: 500;
+
+	@include tablet {
+		padding-left: 70px;
+		padding-right: 70px;
+		padding-top: 15px;
+		padding-bottom: 15px;
+		border-radius: 40px;
+		font-size: 30px;
+	}
 }
 
 img.filter-cta.active {
@@ -62,6 +71,10 @@ img.filter-cta.active {
 	padding-bottom: 0.9375rem;
 	padding-left: 0.9375rem;
 	padding-right: 0.9375rem;
+
+	@include tablet {
+		padding: 3rem;
+	}
 }
 
 .photo-gallery-wrapper {

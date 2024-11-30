@@ -1,7 +1,7 @@
-@use "../../styles/partials/variables";
-@use "../../styles/partials/global";
-@use "../../styles/partials/typograph";
-@use "../../styles/partials/mixing";
+@use "../../styles/partials/mixing" as *;
+@use "../../styles/partials/typograph" as *;
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/global" as *;
 
 .snaps-logo {
 	display: flex;
@@ -12,4 +12,7 @@
 	margin: 0%;
 	padding-top: 1.25rem;
 	font-family: "Newsreader";
+	@include tablet {
+		font-size: 4rem;
+	}
 }

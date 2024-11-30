@@ -1,0 +1,26 @@
+@use "../../styles/partials/mixing" as *;
+@use "../../styles/partials/typograph" as *;
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/global" as *;
+
+.mission-section__title {
+	margin-top: 50px;
+	padding-left: 10px;
+	font-weight: 300;
+	font-family: "Newsreader";
+}
+
+.mission-section__paragraph {
+	font-size: 28px;
+	font-weight: 300;
+	line-height: 40px;
+	padding: 10px;
+	font-family: "Newsreader";
+	color: $primary-colorBlack;
+	font-style: normal;
+	padding-top: 0;
+
+	& span {
+		font-style: italic;
+	}
+}

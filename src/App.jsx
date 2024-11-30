@@ -4,7 +4,7 @@ import SnapsLogo from "./components/SnapsLogo/SnapsLogo";
 import Footer from "./components/Footer/Footer";
 import tags from "./data/tags.json/tags.json";
 import PhotosGallery from "./components/PhotoGallery/PhotoGallery";
-import Header from "./components/Header/Header";
+import Header from "./components/MissionStatement/MissionStatement";
 import image from "./assets/images/Filter.svg";
 import FilterPanel from "./components/FilterPanel/FilterPanel";
 

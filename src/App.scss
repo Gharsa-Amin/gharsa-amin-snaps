@@ -49,8 +49,8 @@ button.filter-cta {
 	@include tablet {
 		padding-left: 50px;
 		padding-right: 50px;
-		padding-top: 15px;
-		padding-bottom: 15px;
+		padding-top: 10px;
+		padding-bottom: 10px;
 		border-radius: 40px;
 		font-size: 30px;
 	}
@@ -93,5 +93,13 @@ img.filter-cta.active {
 .app-container.is-filter-open .photo-gallery__item {
 	@include desktop {
 		flex: 1 1 50%;
+	}
+}
+
+.app-container.is-filter-open .mission-section__paragraph {
+	@include desktop {
+		width: 90%;
+		font-size: 3.6rem;
+		line-height: 4.6rem;
 	}
 }

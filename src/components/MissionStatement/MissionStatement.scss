@@ -4,23 +4,37 @@
 @use "../../styles/partials/global" as *;
 
 .mission-section__title {
-	margin-top: 50px;
-	padding-left: 10px;
-	font-weight: 300;
+	margin-top: 3.125rem;
+	padding-left: 0.625rem;
+	font-weight: 400;
 	font-family: "Newsreader";
+	font-size: 1.2rem;
+	@include tablet {
+		font-size: 1.6rem;
+		padding-left: 1.75rem;
+	}
 }
 
 .mission-section__paragraph {
-	font-size: 28px;
-	font-weight: 300;
-	line-height: 40px;
-	padding: 10px;
+	font-size: 1.75rem;
+	font-weight: 400;
+	line-height: 2.5rem;
+	padding: 0.625rem;
 	font-family: "Newsreader";
 	color: $primary-colorBlack;
-	font-style: normal;
 	padding-top: 0;
-
-	& span {
-		font-style: italic;
+	@include tablet {
+		font-size: 2.375rem;
+		line-height: 4.2rem;
+		padding-left: 1.75rem;
+		padding-right: 1.75rem;
+		@include desktop {
+			width: 50%;
+			font-size: 3rem;
+			margin-top: 0;
+		}
 	}
+}
+.modifier {
+	font-weight: 300;
 }

@@ -7,6 +7,7 @@ import PhotosGallery from "./components/PhotoGallery/PhotoGallery";
 import Header from "./components/MissionStatement/MissionStatement";
 import image from "./assets/images/Filter.svg";
 import FilterPanel from "./components/FilterPanel/FilterPanel";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 export default function App() {
 	const [isFilterOpen, setIsFilterOpen] = useState(false);
@@ -23,6 +24,8 @@ export default function App() {
 
 	return (
 		<main>
+			{/* <BrowserRouter>
+				<Routes> */}
 			<div className="header">
 				<SnapsLogo />
 				<button onClick={toggleFilterDrawer} className={filterButtonClass}>
@@ -49,6 +52,9 @@ export default function App() {
 				</article>
 			</div>
 			<Footer />
+			{/* <Route path="*" element={<Not Found />} />
+				</Routes>
+			</BrowserRouter> */}
 		</main>
 	);
 }

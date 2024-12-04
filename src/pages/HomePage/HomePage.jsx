@@ -8,11 +8,6 @@ import image from "../../assets/images/Filter.svg";
 import FilterPanel from "../../components/FilterPanel/FilterPanel";
 import axios from "axios";
 import PhotoDetails from "../../components/PhotoDetails/PhotoDetails";
-// import { BrowserRouter, Routes, Route } from "react-router-dom";
-// import PhotoDetails from "../../components/PhotoDetails/PhotoDetails";
-// import axios from "axios";
-// import { useEffect, useState } from "react";
-// import { Link } from "react-router-dom";
 
 export default function HomePage() {
 	const [isFilterOpen, setIsFilterOpen] = useState(false);
@@ -46,8 +41,6 @@ export default function HomePage() {
 
 	return (
 		<main>
-			{/* <BrowserRouter>
-				<Routes> */}
 			<div className="header">
 				<SnapsLogo />
 				<button onClick={toggleFilterDrawer} className={filterButtonClass}>
@@ -68,17 +61,12 @@ export default function HomePage() {
 
 				<Header />
 
-				{/* Photo gallery with isFilterOpen passed to determine the layout */}
 				<article className="photo-gallery-container">
 					<PhotosGallery selectedTag={selectedTag} />
 				</article>
 			</div>
 			<Footer />
 			<PhotoDetails />
-			{/* <Route path="*" element={<Not Found />} />
-				</Routes>
-			</BrowserRouter> */}
-			{/* <PhotoDetails /> */}
 		</main>
 	);
 }

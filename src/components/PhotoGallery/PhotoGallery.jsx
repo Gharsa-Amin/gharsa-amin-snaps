@@ -4,8 +4,11 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import React from "react";
 
-export default function PhotoGallery() {
+export default function PhotoGallery({ selectedTag }) {
 	const [photos, setPhotos] = useState([]);
+	const filteredPhotos = selectedTag
+		? photos.filter((photo) => photo.tags.includes(selectedTag))
+		: photos;
 
 	useEffect(() => {
 		const fetchPhotos = async () => {
@@ -25,7 +28,7 @@ export default function PhotoGallery() {
 
 	return (
 		<section className="photo-gallery">
-			{photos.map((photo) => (
+			{filteredPhotos.map((photo) => (
 				<article key={photo.id} className="photo-gallery__item">
 					<div className="photo-wrapper">
 						<img

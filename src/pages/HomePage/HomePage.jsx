@@ -1,13 +1,15 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./HomePage.scss";
 import SnapsLogo from "../../components/SnapsLogo/SnapsLogo";
 import Footer from "../../components/Footer/Footer";
-import tags from "../../data/tags.json/tags.json";
 import PhotosGallery from "../../components/PhotoGallery/PhotoGallery";
 import Header from "../../components/MissionStatement/MissionStatement";
 import image from "../../assets/images/Filter.svg";
 import FilterPanel from "../../components/FilterPanel/FilterPanel";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import axios from "axios";
+import PhotoDetails from "../../components/PhotoDetails/PhotoDetails";
+// import { BrowserRouter, Routes, Route } from "react-router-dom";
+// import PhotoDetails from "../../components/PhotoDetails/PhotoDetails";
 // import axios from "axios";
 // import { useEffect, useState } from "react";
 // import { Link } from "react-router-dom";
@@ -15,6 +17,23 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 export default function HomePage() {
 	const [isFilterOpen, setIsFilterOpen] = useState(false);
 	const [selectedTag, setSelectedTag] = useState(null);
+	const [tags, setTags] = useState();
+
+	useEffect(() => {
+		const fetchFilters = async () => {
+			const URL =
+				"https://unit-3-project-c5faaab51857.herokuapp.com/tags/?api_key=<9285edf0-cde3-4470-a45d-c14b7f386fbc>";
+			try {
+				const response = await axios.get(URL);
+				console.log(response.data);
+
+				setTags(response.data);
+			} catch (error) {
+				console.error(error);
+			}
+		};
+		fetchFilters();
+	}, []);
 
 	const handleTagClicked = (tag) => {
 		setSelectedTag(selectedTag === tag ? null : tag);
@@ -55,9 +74,11 @@ export default function HomePage() {
 				</article>
 			</div>
 			<Footer />
+			<PhotoDetails />
 			{/* <Route path="*" element={<Not Found />} />
 				</Routes>
 			</BrowserRouter> */}
+			{/* <PhotoDetails /> */}
 		</main>
 	);
 }

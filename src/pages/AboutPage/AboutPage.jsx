@@ -2,6 +2,7 @@ import React from "react";
 import { useParams } from "react-router-dom";
 import PhotoDetails from "../../components/PhotoDetails/PhotoDetails";
 import "./AboutPage.scss";
+import Form from "../../components/Form/Form";
 
 export default function AboutPage() {
 	const { id } = useParams();
@@ -10,6 +11,7 @@ export default function AboutPage() {
 		<div className="about-page">
 			{/* Pass the ID as a prop to PhotoDetails */}
 			<PhotoDetails photoId={id} />
+			<Form />
 		</div>
 	);
 }

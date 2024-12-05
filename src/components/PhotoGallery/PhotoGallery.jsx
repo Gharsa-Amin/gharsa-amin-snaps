@@ -29,7 +29,11 @@ export default function PhotoGallery({ selectedTag }) {
 	return (
 		<section className="photo-gallery">
 			{filteredPhotos.map((photo) => (
-				<article key={photo.id} className="photo-gallery__item">
+				<Link
+					key={photo.id}
+					to={`/photos/${photo.id}`}
+					className="photo-gallery__item"
+				>
 					<div className="photo-wrapper">
 						<img
 							src={photo.photo}
@@ -45,7 +49,7 @@ export default function PhotoGallery({ selectedTag }) {
 							))}
 						</div>
 					</div>
-				</article>
+				</Link>
 			))}
 		</section>
 	);

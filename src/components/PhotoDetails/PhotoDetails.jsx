@@ -1,57 +1,76 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
-import { useParams } from "react-router-dom";
 
-export default function PhotoDetails() {
+const formatDate = (timestamp) => {
+	const date = new Date(timestamp);
+	const month = (date.getMonth() + 1).toString().padStart(2, "0");
+	const day = date.getDate().toString().padStart(2, "0");
+	const year = date.getFullYear();
+	return `${month}/${day}/${year}`;
+};
+export default function PhotoDetails({ photoId }) {
 	const [photoDetails, setPhotoDetails] = useState(null);
-	const [error, setError] = useState();
+	const [error, setError] = useState(null);
 
-	const params = useParams();
-	const { id } = params;
+	console.log("Received photoId:", photoId);
+
 	useEffect(() => {
-		const URL = `https://unit-3-project-c5faaab51857.herokuapp.com/photos/${id}/comments?api_key=9285edf0-cde3-4470-a45d-c14b7f386fbc`;
+		if (!photoId) {
+			console.log("No photoId provided");
+			return;
+		}
 
-		const mountPhotoDetails = async (params) => {
+		const URL = `https://unit-3-project-c5faaab51857.herokuapp.com/photos/${photoId}?api_key=9285edf0-cde3-4470-a45d-c14b7f386fbc`;
+
+		const fetchPhotoDetails = async () => {
 			try {
+				console.log("Making API request to:", URL);
 				const response = await axios.get(URL);
+
+				console.log("API Response:", response.data);
+
 				setPhotoDetails(response.data);
-				console.log(response.data);
 			} catch (error) {
-				console.error(error);
 				setError(error);
+				console.error("Error fetching photo details:", error);
 			}
 		};
-		mountPhotoDetails();
-	}, [id]);
 
-	if (photoDetails === null) {
+		fetchPhotoDetails();
+	}, [photoId]);
+
+	if (error) {
+		return <div>Error loading photo details: {error.message}</div>;
+	}
+
+	if (!photoDetails) {
 		return <>Loading...</>;
 	}
-	ß;
+	const formattedDate = formatDate(photoDetails.timestamp);
+
 	return (
-		<>
-			<section className="photo-gallery">
-				{photoDetails.map((photo) => (
-					<article key={photo.id} className="photo-gallery__item">
-						<div className="photo-wrapper">
-							<img
-								src={photo.photo}
-								alt={photo.photographer}
-								className="photo-gallery__image"
-							/>
-							<div className="photo-gallery__details">
-								{photo.tags.map((tag, index) => (
-									<button key={index} className="tag">
-										{tag}
-									</button>
-								))}
-								<div className="photographer">{photo.photographer}</div>
-							</div>
+		<section className="photo-gallery">
+			<div className="photo-wrapper">
+				<img
+					src={photoDetails.photo}
+					alt={photoDetails.photographer}
+					className="photo-gallery__image"
+				/>
+				<div className="photo-gallery__details">
+					{photoDetails.tags.map((tag, index) => (
+						<button key={index} className="tag">
+							{tag}
+						</button>
+					))}
+					<div className="photo-details__likes">{photoDetails.likes} Likes</div>
+					<div className="photo-details__time">{formattedDate}</div>
+					<div className="photo-details__info">
+						<div className="photo-details__photographer">
+							Photo by {photoDetails.photographer}
 						</div>
-					</article>
-				))}
-			</section>
-		</>
+					</div>
+				</div>
+			</div>
+		</section>
 	);
 }

@@ -5,13 +5,14 @@ import HomePage from "./pages/HomePage/HomePage";
 import AboutPage from "./pages/AboutPage/AboutPage";
 
 export default function App() {
-	return;
-	<>
-		<BrowserRouter>
-			<Routes>
-				<Route path="/" element={<HomePage />} />
-				<Route path="About" element={<AboutPage />} />
-			</Routes>
-		</BrowserRouter>
-	</>;
+	return (
+		<>
+			<BrowserRouter>
+				<Routes>
+					<Route path="/" element={<HomePage />} />
+					<Route path="/photos/:id" element={<AboutPage />} />
+				</Routes>
+			</BrowserRouter>
+		</>
+	);
 }

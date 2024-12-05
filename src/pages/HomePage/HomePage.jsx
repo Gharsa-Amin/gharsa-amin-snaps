@@ -7,8 +7,7 @@ import Header from "../../components/MissionStatement/MissionStatement";
 import image from "../../assets/images/Filter.svg";
 import FilterPanel from "../../components/FilterPanel/FilterPanel";
 import axios from "axios";
-import PhotoDetails from "../../components/PhotoDetails/PhotoDetails";
-
+import { Link } from "react-router-dom";
 export default function HomePage() {
 	const [isFilterOpen, setIsFilterOpen] = useState(false);
 	const [selectedTag, setSelectedTag] = useState(null);
@@ -66,7 +65,6 @@ export default function HomePage() {
 				</article>
 			</div>
 			<Footer />
-			<PhotoDetails />
 		</main>
 	);
 }

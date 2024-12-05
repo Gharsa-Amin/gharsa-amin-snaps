@@ -1,0 +1,16 @@
+.footer-section__socials {
+	@include desktop {
+		display: flex;
+	}
+	&-icons {
+		padding-right: 1.875rem;
+		@include tablet {
+			width: 2.8125rem;
+		}
+		@include desktop {
+			margin-top: 5.625rem;
+			width: 1.875rem;
+			padding-right: 1rem;
+		}
+	}
+}

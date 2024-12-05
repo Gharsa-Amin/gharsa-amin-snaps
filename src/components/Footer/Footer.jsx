@@ -1,9 +1,6 @@
-import Facebook from "../../assets/images/Facebook.svg";
-import Twitter from "../../assets/images/X_twitter.svg";
-import Instagram from "../../assets/images/Instagram.svg";
-import Pinterest from "../../assets/images/Pinterest.svg";
 import SnapsLogo from "../SnapsLogo/SnapsLogo";
 import "./Footer.scss";
+import FooterFacebook from "../FooterSocial/FooterSocial";
 
 export default function Footer() {
 	return (
@@ -37,32 +34,5 @@ export default function Footer() {
 				<p className="copy-rights__paragraph">Cookies</p>
 			</section>
 		</section>
-	);
-}
-
-function FooterFacebook() {
-	return (
-		<article className="footer-section__socials">
-			<img
-				className="footer-section__socials-icons"
-				src={Facebook}
-				alt="facebook logo"
-			/>
-			<img
-				className="footer-section__socials-icons"
-				src={Twitter}
-				alt="Twitter logo"
-			/>
-			<img
-				className="footer-section__socials-icons"
-				src={Instagram}
-				alt="Instagram logo"
-			/>
-			<img
-				className="footer-section__socials-icons"
-				src={Pinterest}
-				alt="Pinterest logo"
-			/>
-		</article>
 	);
 }

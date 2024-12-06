@@ -64,7 +64,6 @@ export default function HomePage() {
 					<PhotosGallery selectedTag={selectedTag} />
 				</article>
 			</div>
-			<Footer />
 		</main>
 	);
 }

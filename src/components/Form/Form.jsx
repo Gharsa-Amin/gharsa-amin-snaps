@@ -1,4 +1,5 @@
 import { useState } from "react";
+import "./form.scss";
 
 export default function Form({ onAddComment }) {
 	const [inputName, setInputName] = useState("");
@@ -32,8 +33,9 @@ export default function Form({ onAddComment }) {
 	return (
 		<form onSubmit={handleChangeSubmit}>
 			<div>
-				<label>Name</label>
+				<label className="form-label">Name</label>
 				<input
+					className="form-input"
 					type="text"
 					name="name"
 					onChange={handleChangeName}
@@ -41,15 +43,18 @@ export default function Form({ onAddComment }) {
 				/>
 			</div>
 			<div>
-				<label>Comment</label>
+				<label className="form-label">Comment</label>
 				<textarea
+					className="form-textarea"
 					name="comment"
 					onChange={handleChangeComment}
 					value={comment}
 				/>
 			</div>
-			<div>
-				<button type="submit">Submit</button>
+			<div className="form-button">
+				<button className="form-button__content" type="submit">
+					Submit
+				</button>
 			</div>
 		</form>
 	);

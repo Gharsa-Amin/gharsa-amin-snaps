@@ -1,5 +1,7 @@
 import axios from "axios";
+import "./PhotoDetails.scss";
 import { useState, useEffect } from "react";
+import image from "../../assets/images/Like_Outline.svg";
 
 const formatDate = (timestamp) => {
 	const date = new Date(timestamp);
@@ -62,8 +64,13 @@ export default function PhotoDetails({ photoId }) {
 							{tag}
 						</button>
 					))}
-					<div className="photo-details__likes">{photoDetails.likes} Likes</div>
-					<div className="photo-details__time">{formattedDate}</div>
+					<div className="photo-details__wrapper">
+						<div className="photo-details__likes">
+							<img src={image} alt="Like icon" />
+							{photoDetails.likes} Likes
+						</div>
+						<div className="photo-details__time">{formattedDate}</div>
+					</div>
 					<div className="photo-details__info">
 						<div className="photo-details__photographer">
 							Photo by {photoDetails.photographer}

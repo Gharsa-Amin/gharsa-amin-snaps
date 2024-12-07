@@ -1,0 +1,27 @@
+@use "../../styles/partials/global" as *;
+@use "../../styles/partials/typograph" as *;
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixing" as *;
+
+.photo-gallery-wrapper {
+	display: flex;
+	justify-content: flex-start;
+	gap: 1rem;
+	transition: all 0.3s ease;
+	width: 100%;
+}
+.is-filter-open {
+	@include desktop {
+		width: 60%;
+	}
+}
+
+.app-container.is-filter-open .photo-gallery__item {
+	@include desktop {
+		flex: 1 1 50%;
+	}
+}
+
+// .photo-gallery {
+// 	padding: 20px;
+// }

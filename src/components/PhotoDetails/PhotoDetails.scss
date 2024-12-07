@@ -3,6 +3,27 @@
 @use "../../styles/partials/variables" as *;
 @use "../../styles/partials/mixing" as *;
 
+.photo-details {
+	padding: 1.5625rem;
+	&__wrapper {
+		display: flex;
+		justify-content: space-between;
+		padding: 0.75rem;
+		color: $primary-colorBlack;
+		font-family: "Outfit";
+	}
+	&__likes {
+		font-weight: 500;
+	}
+	&__image {
+		padding-right: 0.625rem;
+	}
+	&__photographer {
+		padding-left: 0.75rem;
+		color: $primary-colorBlack;
+		font-family: "Outfit";
+	}
+}
 .photo-gallery-wrapper {
 	display: flex;
 	justify-content: flex-start;
@@ -15,13 +36,8 @@
 		width: 60%;
 	}
 }
-
 .app-container.is-filter-open .photo-gallery__item {
 	@include desktop {
 		flex: 1 1 50%;
 	}
 }
-
-// .photo-gallery {
-// 	padding: 20px;
-// }

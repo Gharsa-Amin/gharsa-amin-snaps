@@ -51,7 +51,7 @@ export default function PhotoDetails({ photoId }) {
 	const formattedDate = formatDate(photoDetails.timestamp);
 
 	return (
-		<section className="photo-gallery">
+		<section className="photo-details">
 			<div className="photo-wrapper">
 				<img
 					src={photoDetails.photo}
@@ -66,7 +66,11 @@ export default function PhotoDetails({ photoId }) {
 					))}
 					<div className="photo-details__wrapper">
 						<div className="photo-details__likes">
-							<img src={image} alt="Like icon" />
+							<img
+								className="photo-details__image"
+								src={image}
+								alt="Like icon"
+							/>
 							{photoDetails.likes} Likes
 						</div>
 						<div className="photo-details__time">{formattedDate}</div>

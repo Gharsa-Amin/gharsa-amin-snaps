@@ -7,22 +7,6 @@ export default function PostComment({ photoId, getComments }) {
 	const [comments, setComments] = useState([]);
 	const [error, setError] = useState(null);
 
-	// useEffect(() => {
-	// 	const URL = `https://unit-3-project-c5faaab51857.herokuapp.com/photos/${photoId}/comments?api_key=9285edf0-cde3-4470-a45d-c14b7f386fbc`;
-
-	// 	const fetchComments = async () => {
-	// 		try {
-	// 			const response = await axios.get(URL);
-	// 			setComments(response.data);
-	// 		} catch (error) {
-	// 			setError(error);
-	// 			console.error("Error fetching comments:", error);
-	// 		}
-	// 	};
-
-	// 	fetchComments();
-	// }, [photoId]);
-
 	const handleAddComment = async (name, comment) => {
 		const URL = `https://unit-3-project-c5faaab51857.herokuapp.com/photos/${photoId}/comments?api_key=9285edf0-cde3-4470-a45d-c14b7f386fbc`;
 
@@ -37,7 +21,6 @@ export default function PostComment({ photoId, getComments }) {
 				}
 			);
 
-			// setComments((prevComments) => [...prevComments, response.data]);
 			getComments();
 		} catch (error) {
 			setError(error);
@@ -48,11 +31,7 @@ export default function PostComment({ photoId, getComments }) {
 
 	return (
 		<section>
-			<Form onAddComment={handleAddComment} />
-
-			{/* <GetComment photoId={photoId} />
-
-			{error && <p>Error: {error.message}</p>} */}
+			<Form onAddComment={handleAddComment} />{" "}
 		</section>
 	);
 }

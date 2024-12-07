@@ -1,6 +1,6 @@
 import SnapsLogo from "../SnapsLogo/SnapsLogo";
 import "./Footer.scss";
-import FooterFacebook from "../FooterSocial/FooterSocial";
+import FooterSocials from "../FooterSocial/FooterSocial";
 
 export default function Footer() {
 	return (
@@ -25,7 +25,7 @@ export default function Footer() {
 						<p className="footer-section__about-item">Support</p>
 					</div>
 				</div>
-				<FooterFacebook />
+				<FooterSocials />
 			</div>
 			<section className="copy-rights">
 				<p className="copy-rights__paragraph">© 2024 Snaps</p>

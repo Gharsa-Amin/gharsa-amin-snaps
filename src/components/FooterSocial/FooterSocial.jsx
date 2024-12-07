@@ -2,8 +2,8 @@ import Facebook from "../../assets/images/Facebook.svg";
 import Twitter from "../../assets/images/X_twitter.svg";
 import Instagram from "../../assets/images/Instagram.svg";
 import Pinterest from "../../assets/images/Pinterest.svg";
-
-export default function FooterFacebook() {
+import "./FooterSocial.scss";
+export default function FooterSocials() {
 	return (
 		<article className="footer-section__socials">
 			<img
@@ -11,6 +11,7 @@ export default function FooterFacebook() {
 				src={Facebook}
 				alt="facebook logo"
 			/>
+
 			<img
 				className="footer-section__socials-icons"
 				src={Twitter}

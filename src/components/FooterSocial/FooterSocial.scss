@@ -1,6 +1,12 @@
+@use "../../styles/partials/global" as *;
+@use "../../styles/partials/mixing" as *;
+@use "../../styles/partials/typograph" as *;
+@use "../../styles/partials/variables" as *;
+
 .footer-section__socials {
 	@include desktop {
 		display: flex;
+		margin-top: -13rem;
 	}
 	&-icons {
 		padding-right: 1.875rem;
@@ -8,7 +14,6 @@
 			width: 2.8125rem;
 		}
 		@include desktop {
-			margin-top: 5.625rem;
 			width: 1.875rem;
 			padding-right: 1rem;
 		}

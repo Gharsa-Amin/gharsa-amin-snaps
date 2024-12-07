@@ -6,6 +6,7 @@ import PhotoDetails from "../../components/PhotoDetails/PhotoDetails";
 import "./AboutPage.scss";
 import Comments from "../../components/GetComment/GetComment";
 import PostComment from "../../components/PostComment/PostComment";
+import NavBar from "../../components/AboutPageNav/AboutPageNav";
 
 export default function AboutPage() {
 	const { id } = useParams();
@@ -28,6 +29,7 @@ export default function AboutPage() {
 	}, [id]);
 	return (
 		<div className="about-page">
+			<NavBar />
 			<PhotoDetails photoId={id} />
 			<PostComment photoId={id} getComments={getComments} />
 			<Comments comments={comments} />

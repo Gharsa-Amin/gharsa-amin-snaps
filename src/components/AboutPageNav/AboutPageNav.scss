@@ -1,0 +1,28 @@
+@use "../../styles/partials/mixing" as *;
+@use "../../styles/partials/typograph" as *;
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/global" as *;
+
+.nav-bar {
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-end;
+	padding: 2.5rem 0.9375rem 1.875rem 0.9375rem;
+
+	@include tablet {
+		padding: 3rem;
+	}
+	&__logo {
+		display: flex;
+
+		margin: 0;
+	}
+	&__header {
+		color: $primary-colorForestGreen;
+		padding-right: 0.75rem;
+		padding-left: 0.75rem;
+		font-family: "Outfit";
+		font-size: 1.875rem;
+		margin: 0;
+	}
+}

@@ -1,0 +1,10 @@
+@use "../../styles/partials/global" as *;
+@use "../../styles/partials/typograph" as *;
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixing" as *;
+
+.redirectional-link {
+	color: $primary-colorForestGreen;
+	padding: 0.75rem;
+	font-size: 2.1875rem;
+}

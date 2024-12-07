@@ -9,6 +9,11 @@
 		max-width: 60%;
 		padding-left: 16rem;
 	}
+	&__count {
+		color: $primary-colorBlack;
+		font-family: "Outfit";
+		font-size: 1rem;
+	}
 }
 .comment-item {
 	&__author {

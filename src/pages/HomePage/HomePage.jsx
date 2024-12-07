@@ -1,9 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./HomePage.scss";
-import SnapsLogo from "../../components/SnapsLogo/SnapsLogo";
-import Footer from "../../components/Footer/Footer";
 import PhotosGallery from "../../components/PhotoGallery/PhotoGallery";
-// import Header from "../../components/MissionStatement/MissionStatement";
 import FilterPanel from "../../components/FilterPanel/FilterPanel";
 import axios from "axios";
 import { Link } from "react-router-dom";
@@ -55,9 +52,6 @@ export default function HomePage() {
 						/>
 					</div>
 				)}
-
-				{/* <Header /> */}
-
 				<article className="photo-gallery-container">
 					<PhotosGallery selectedTag={selectedTag} />
 				</article>

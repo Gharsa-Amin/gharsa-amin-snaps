@@ -5,23 +5,57 @@
 
 .photo-details {
 	padding: 1.5625rem;
+	@include desktop {
+		max-width: 60%;
+		padding-left: 16rem;
+	}
+	&__main-wrapper {
+		@include tablet {
+			display: flex;
+			flex-direction: row;
+			justify-content: space-between;
+			gap: 1.25rem;
+			font-size: 1.25rem;
+			padding-right: 0.75rem;
+		}
+		@include desktop {
+			justify-content: space-between;
+			gap: 0;
+			padding-top: 0.9375rem;
+			padding-right: 0.75rem;
+		}
+	}
 	&__wrapper {
 		display: flex;
 		justify-content: space-between;
 		padding: 0.75rem;
 		color: $primary-colorBlack;
 		font-family: "Outfit";
+		@include desktop {
+			padding: 0;
+		}
 	}
 	&__likes {
 		font-weight: 500;
 	}
 	&__image {
 		padding-right: 0.625rem;
+		@include tablet {
+			padding-left: 1.875rem;
+		}
 	}
 	&__photographer {
 		padding-left: 0.75rem;
 		color: $primary-colorBlack;
 		font-family: "Outfit";
+	}
+	&__time {
+		@include tablet {
+			padding-left: 18.75rem;
+		}
+		@include desktop {
+			padding-left: 12.5rem;
+		}
 	}
 }
 .photo-gallery-wrapper {

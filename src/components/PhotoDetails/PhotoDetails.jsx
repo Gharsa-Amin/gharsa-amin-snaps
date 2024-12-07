@@ -64,20 +64,22 @@ export default function PhotoDetails({ photoId }) {
 							{tag}
 						</button>
 					))}
-					<div className="photo-details__wrapper">
-						<div className="photo-details__likes">
-							<img
-								className="photo-details__image"
-								src={image}
-								alt="Like icon"
-							/>
-							{photoDetails.likes} Likes
+					<div className="photo-details__main-wrapper">
+						<div className="photo-details__wrapper">
+							<div className="photo-details__likes">
+								<img
+									className="photo-details__image"
+									src={image}
+									alt="Like icon"
+								/>
+								{photoDetails.likes} Likes
+							</div>
+							<div className="photo-details__time">{formattedDate}</div>
 						</div>
-						<div className="photo-details__time">{formattedDate}</div>
-					</div>
-					<div className="photo-details__info">
-						<div className="photo-details__photographer">
-							Photo by {photoDetails.photographer}
+						<div className="photo-details__info">
+							<div className="photo-details__photographer">
+								Photo by {photoDetails.photographer}
+							</div>
 						</div>
 					</div>
 				</div>

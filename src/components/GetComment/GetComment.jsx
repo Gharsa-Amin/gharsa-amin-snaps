@@ -2,9 +2,11 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import "./GetComment.scss";
 
-export default function Comments({ comments, commentCount }) {
+export default function Comments({ comments }) {
+	const commentCount = comments.length;
 	return (
 		<section className="comment-section">
+			<p>{commentCount} Comment</p>
 			{comments.map((comment) => (
 				<div key={comment.id} className="comment-item">
 					<div className="comment-item__wrapper">

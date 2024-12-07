@@ -3,11 +3,11 @@ import "./HomePage.scss";
 import SnapsLogo from "../../components/SnapsLogo/SnapsLogo";
 import Footer from "../../components/Footer/Footer";
 import PhotosGallery from "../../components/PhotoGallery/PhotoGallery";
-import Header from "../../components/MissionStatement/MissionStatement";
-import image from "../../assets/images/Filter.svg";
+// import Header from "../../components/MissionStatement/MissionStatement";
 import FilterPanel from "../../components/FilterPanel/FilterPanel";
 import axios from "axios";
 import { Link } from "react-router-dom";
+import Header from "../../components/Header/Header";
 export default function HomePage() {
 	const [isFilterOpen, setIsFilterOpen] = useState(false);
 	const [selectedTag, setSelectedTag] = useState(null);
@@ -40,13 +40,11 @@ export default function HomePage() {
 
 	return (
 		<main>
-			<div className="header">
-				<SnapsLogo />
-				<button onClick={toggleFilterDrawer} className={filterButtonClass}>
-					<img src={image} alt="Filter icon" />
-					{isFilterOpen ? "Filters" : "Filters"}
-				</button>
-			</div>
+			<Header
+				isFilterOpen={isFilterOpen}
+				toggleFilterDrawer={toggleFilterDrawer}
+				filterButtonClass={filterButtonClass}
+			/>
 			<div className={`app-container ${isFilterOpen ? "is-filter-open" : ""}`}>
 				{isFilterOpen && (
 					<div className="filter-drawer">
@@ -58,7 +56,7 @@ export default function HomePage() {
 					</div>
 				)}
 
-				<Header />
+				{/* <Header /> */}
 
 				<article className="photo-gallery-container">
 					<PhotosGallery selectedTag={selectedTag} />

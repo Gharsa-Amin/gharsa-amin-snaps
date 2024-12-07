@@ -3,25 +3,25 @@ import { useEffect, useState } from "react";
 import Form from "../Form/Form";
 import GetComment from "../GetComment/GetComment";
 
-export default function PostComment({ photoId }) {
+export default function PostComment({ photoId, getComments }) {
 	const [comments, setComments] = useState([]);
 	const [error, setError] = useState(null);
 
-	useEffect(() => {
-		const URL = `https://unit-3-project-c5faaab51857.herokuapp.com/photos/${photoId}/comments?api_key=9285edf0-cde3-4470-a45d-c14b7f386fbc`;
+	// useEffect(() => {
+	// 	const URL = `https://unit-3-project-c5faaab51857.herokuapp.com/photos/${photoId}/comments?api_key=9285edf0-cde3-4470-a45d-c14b7f386fbc`;
 
-		const fetchComments = async () => {
-			try {
-				const response = await axios.get(URL);
-				setComments(response.data);
-			} catch (error) {
-				setError(error);
-				console.error("Error fetching comments:", error);
-			}
-		};
+	// 	const fetchComments = async () => {
+	// 		try {
+	// 			const response = await axios.get(URL);
+	// 			setComments(response.data);
+	// 		} catch (error) {
+	// 			setError(error);
+	// 			console.error("Error fetching comments:", error);
+	// 		}
+	// 	};
 
-		fetchComments();
-	}, [photoId]);
+	// 	fetchComments();
+	// }, [photoId]);
 
 	const handleAddComment = async (name, comment) => {
 		const URL = `https://unit-3-project-c5faaab51857.herokuapp.com/photos/${photoId}/comments?api_key=9285edf0-cde3-4470-a45d-c14b7f386fbc`;
@@ -37,7 +37,8 @@ export default function PostComment({ photoId }) {
 				}
 			);
 
-			setComments((prevComments) => [...prevComments, response.data]);
+			// setComments((prevComments) => [...prevComments, response.data]);
+			getComments();
 		} catch (error) {
 			setError(error);
 			console.error("Error posting comment:", error);
@@ -49,9 +50,9 @@ export default function PostComment({ photoId }) {
 		<section>
 			<Form onAddComment={handleAddComment} />
 
-			<GetComment comments={comments} />
+			{/* <GetComment photoId={photoId} />
 
-			{error && <p>Error: {error.message}</p>}
+			{error && <p>Error: {error.message}</p>} */}
 		</section>
 	);
 }

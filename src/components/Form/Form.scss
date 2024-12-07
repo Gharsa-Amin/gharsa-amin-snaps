@@ -4,9 +4,7 @@
 @use "../../styles/partials/mixing" as *;
 
 form {
-	padding-top: 3.125rem;
-	padding: 0.75rem;
-	padding-left: 1.125rem;
+	padding: 3.125rem 0.75rem 0.75rem 1.125rem;
 	@include tablet {
 		padding-left: 2rem;
 	}
@@ -14,11 +12,10 @@ form {
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
-		max-width: 90%;
-		padding-left: 12.5rem;
+		max-width: 60%;
+		padding-left: 16rem;
 	}
 }
-
 .form-label {
 	display: flex;
 	padding-bottom: 1.25rem;
@@ -54,22 +51,16 @@ form {
 	justify-content: flex-end;
 	padding-right: 1rem;
 	padding-top: 1.875rem;
-}
 
-.form-button__content {
-	background-color: $primary-colorForestGreen;
-	color: $secondary-colorWhite;
-	padding: 15px 30px 15px 30px;
-	font-size: 1.2rem;
-	@include tablet {
-		font-size: 1.6rem;
-		padding: 15px 40px;
-		border-radius: 15px;
+	&__content {
+		background-color: $primary-colorForestGreen;
+		color: $secondary-colorWhite;
+		padding: 15px 30px 15px 30px;
+		font-size: 1.2rem;
+		@include tablet {
+			font-size: 1.6rem;
+			padding: 15px 40px;
+			border-radius: 15px;
+		}
 	}
 }
-
-// padding:10px 5px 15px 20px;
-// top padding is 10px
-// right padding is 5px
-// bottom padding is 15px
-// left padding is 20px

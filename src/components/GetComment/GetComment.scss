@@ -1,0 +1,39 @@
+@use "../../styles/partials/global" as *;
+@use "../../styles/partials/typograph" as *;
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixing" as *;
+
+.comment-section {
+	padding: 1.5625rem;
+	@include desktop {
+		max-width: 60%;
+		padding-left: 16rem;
+	}
+}
+.comment-item {
+	&__author {
+		color: $primary-colorForestGreen;
+		font-family: "Outfit";
+		font-weight: 500;
+		font-size: 1.25rem;
+	}
+	&__wrapper {
+		display: flex;
+		justify-content: space-between;
+		border-top: 1px solid $secondary-colorSeaGreen;
+	}
+	&__time {
+		color: $primary-colorForestGreen;
+		font-family: "Outfit";
+		font-weight: 500;
+	}
+	&__comment {
+		color: $primary-colorBlack;
+		font-family: "Outfit";
+		font-weight: 500;
+		font-size: 1.25rem;
+		@include tablet {
+			font-size: 1.875rem;
+		}
+	}
+}

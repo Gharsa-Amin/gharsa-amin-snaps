@@ -22,7 +22,8 @@ export default function PhotoDetails({ photoId }) {
 			return;
 		}
 
-		const URL = `https://unit-3-project-c5faaab51857.herokuapp.com/photos/${photoId}?api_key=9285edf0-cde3-4470-a45d-c14b7f386fbc`;
+		// const URL = `https://unit-3-project-c5faaab51857.herokuapp.com/photos/${photoId}?api_key=9285edf0-cde3-4470-a45d-c14b7f386fbc`;
+		const URL = `http://localhost:8080/photos/${photoId}`;
 
 		const fetchPhotoDetails = async () => {
 			try {

@@ -12,8 +12,8 @@ export default function HomePage() {
 
 	useEffect(() => {
 		const fetchFilters = async () => {
-			const URL =
-				"https://unit-3-project-c5faaab51857.herokuapp.com/tags/?api_key=<9285edf0-cde3-4470-a45d-c14b7f386fbc>";
+			const URL = "http://localhost:8080/tags";
+			// "https://unit-3-project-c5faaab51857.herokuapp.com/tags/?api_key=<9285edf0-cde3-4470-a45d-c14b7f386fbc>";
 			try {
 				const response = await axios.get(URL);
 				console.log(response.data);

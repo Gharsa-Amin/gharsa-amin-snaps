@@ -12,8 +12,7 @@ export default function PhotoGallery({ selectedTag }) {
 
 	useEffect(() => {
 		const fetchPhotos = async () => {
-			const URL =
-				"https://unit-3-project-c5faaab51857.herokuapp.com/photos/?api_key=<9285edf0-cde3-4470-a45d-c14b7f386fbc>";
+			const URL = "http://localhost:8080/photos";
 			try {
 				const response = await axios.get(URL);
 				console.log(response.data);
@@ -36,7 +35,7 @@ export default function PhotoGallery({ selectedTag }) {
 				>
 					<div className="photo-wrapper">
 						<img
-							src={photo.photo}
+							src={`http://localhost:8080${photo.photo}`}
 							alt={photo.photographer}
 							className="photo-gallery__image"
 						/>

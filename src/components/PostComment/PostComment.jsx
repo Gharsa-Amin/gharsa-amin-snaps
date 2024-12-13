@@ -10,7 +10,7 @@ export default function PostComment({ photoId, getComments }) {
 	const handleAddComment = async (name, comment) => {
 		// const URL = `https://unit-3-project-c5faaab51857.herokuapp.com/photos/${photoId}/comments?api_key=9285edf0-cde3-4470-a45d-c14b7f386fbc`;
 		const URL =
-			"http://localhost:8080/photos/6be619d5-de2c-4f62-ac1b-bd2e36d71ab9/comments";
+			`http://localhost:8080/photos/${photoId}/comments`;
 		try {
 			const response = await axios.post(
 				URL,

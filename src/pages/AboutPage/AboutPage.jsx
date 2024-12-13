@@ -18,8 +18,8 @@ export default function AboutPage() {
 		try {
 			const response = await axios.get(URL);
 			const fetchedComments = response.data;
-			console.log(response.data);
-			setComments(fetchedComments.reverse());
+			const sorted = fetchedComments.sort((a,b) => b.timestamp - a.timestamp)
+			setComments(sorted);
 		} catch (error) {
 			setError(error);
 			console.error("Error fetching comments:", error);

@@ -24,7 +24,6 @@ export default function PhotoGallery({ selectedTag }) {
 		};
 		fetchPhotos();
 	}, []);
-
 	return (
 		<section className="photo-gallery">
 			{filteredPhotos.map((photo) => (

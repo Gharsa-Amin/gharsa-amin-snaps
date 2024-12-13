@@ -13,7 +13,8 @@ export default function AboutPage() {
 	const [comments, setComments] = useState([]);
 	const [error, setError] = useState(null);
 	const getComments = async () => {
-		const URL = `https://unit-3-project-c5faaab51857.herokuapp.com/photos/${id}/comments?api_key=9285edf0-cde3-4470-a45d-c14b7f386fbc`;
+		// const URL = `https://unit-3-project-c5faaab51857.herokuapp.com/photos/${id}/comments?api_key=9285edf0-cde3-4470-a45d-c14b7f386fbc`;
+		const URL = `http://localhost:8080/photos/${id}/comments`;
 		try {
 			const response = await axios.get(URL);
 			const fetchedComments = response.data;

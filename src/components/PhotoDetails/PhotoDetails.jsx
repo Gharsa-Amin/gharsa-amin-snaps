@@ -55,7 +55,8 @@ export default function PhotoDetails({ photoId }) {
 		<section className="photo-details">
 			<div className="photo-wrapper">
 				<img
-					src={photoDetails.photo}
+					// src={photoDetails.photo}
+					src={`http://localhost:8080${photoDetails.photo}`}
 					alt={photoDetails.photographer}
 					className="photo-gallery__image"
 				/>

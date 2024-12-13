@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./App.scss";
+// import "./App.scss";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import HomePage from "./pages/HomePage/HomePage";
 import AboutPage from "./pages/AboutPage/AboutPage";

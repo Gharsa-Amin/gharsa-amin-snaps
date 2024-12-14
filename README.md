@@ -1,1 +1,1 @@
-Snaps Sprint 3
+Snaps Project -- 3 Sprints 

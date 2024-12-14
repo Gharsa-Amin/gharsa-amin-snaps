@@ -57,7 +57,7 @@ export default function PhotoDetails({ photoId }) {
 				/>
 				<div className="photo-gallery__details">
 					{photoDetails.tags.map((tag, index) => (
-						<button key={index} className="tag">
+						<button key={index} className="tag" disabled>
 							{tag}
 						</button>
 					))}

@@ -2,7 +2,7 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import Form from "../Form/Form";
 
-export default function PostComment({ photoId, getComments }) {
+export default function NewComments({ photoId, getComments }) {
 	const [comments, setComments] = useState([]);
 	const [error, setError] = useState(null);
 
@@ -24,7 +24,6 @@ export default function PostComment({ photoId, getComments }) {
 			setError(error);
 			console.error("Error posting comment:", error);
 		}
-		console.log("handleAddComment:", handleAddComment);
 	};
 
 	return (

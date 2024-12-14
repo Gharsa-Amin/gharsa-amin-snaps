@@ -14,20 +14,16 @@ export default function PhotoDetails({ photoId }) {
 	const [photoDetails, setPhotoDetails] = useState(null);
 	const [error, setError] = useState(null);
 
-	console.log("Received photoId:", photoId);
-
 	useEffect(() => {
 		if (!photoId) {
 			console.log("No photoId provided");
 			return;
 		}
 
-		// const URL = `https://unit-3-project-c5faaab51857.herokuapp.com/photos/${photoId}?api_key=9285edf0-cde3-4470-a45d-c14b7f386fbc`;
 		const URL = `http://localhost:8080/photos/${photoId}`;
 
 		const fetchPhotoDetails = async () => {
 			try {
-				console.log("Making API request to:", URL);
 				const response = await axios.get(URL);
 
 				console.log("API Response:", response.data);
@@ -55,7 +51,6 @@ export default function PhotoDetails({ photoId }) {
 		<section className="photo-details">
 			<div className="photo-wrapper">
 				<img
-					// src={photoDetails.photo}
 					src={`http://localhost:8080${photoDetails.photo}`}
 					alt={photoDetails.photographer}
 					className="photo-gallery__image"

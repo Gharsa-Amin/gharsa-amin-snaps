@@ -3,7 +3,6 @@ import "./HomePage.scss";
 import PhotosGallery from "../../components/PhotoGallery/PhotoGallery";
 import FilterPanel from "../../components/FilterPanel/FilterPanel";
 import axios from "axios";
-import { Link } from "react-router-dom";
 import Header from "../../components/Header/Header";
 export default function HomePage() {
 	const [isFilterOpen, setIsFilterOpen] = useState(false);
@@ -13,7 +12,6 @@ export default function HomePage() {
 	useEffect(() => {
 		const fetchFilters = async () => {
 			const URL = "http://localhost:8080/tags";
-			// "https://unit-3-project-c5faaab51857.herokuapp.com/tags/?api_key=<9285edf0-cde3-4470-a45d-c14b7f386fbc>";
 			try {
 				const response = await axios.get(URL);
 				console.log(response.data);

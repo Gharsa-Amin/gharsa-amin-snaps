@@ -1,6 +1,4 @@
-import axios from "axios";
-import { useEffect, useState } from "react";
-import "./GetComment.scss";
+import "./Comments.scss";
 
 export default function Comments({ comments }) {
 	const commentCount = comments.length;

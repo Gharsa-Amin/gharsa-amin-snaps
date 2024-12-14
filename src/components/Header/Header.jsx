@@ -1,7 +1,4 @@
 import SnapsLogo from "../SnapsLogo/SnapsLogo";
-import "./Header.scss";
-import { Link } from "react-router-dom";
-import image from "../../assets/images/Filter.svg";
 
 export default function Header({
 	isFilterOpen,

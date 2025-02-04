@@ -1,1 +1,1 @@
-Snaps Project -- 3 Sprints 
+You have been approached by an entrepreneur to build out a prototype for a new photo sharing application called Snaps. The entrepreneur has meetings lined up for funding with several VCs and needs the prototype built within the next three weeks. Snaps’ Creative Director has provided you with a package and mockup of how they envision the final product using React, API endpoints, Express, and Node. 
